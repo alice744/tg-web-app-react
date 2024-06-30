@@ -6,7 +6,7 @@ const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
-    const {tg} = useTelegram();
+    const { tg } = useTelegram();
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
@@ -25,7 +25,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!street || !country) {
+        if (!street || !country) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
